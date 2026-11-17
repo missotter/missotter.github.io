@@ -2,5 +2,9 @@ baseURL = 'https://missotter.github.io/'
 locale = 'en'
 title = '[ I write reviews. ]'
 
+[markup.goldmark.renderer]
+unsafe = true
+
+
 
 

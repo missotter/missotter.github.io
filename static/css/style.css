@@ -486,8 +486,100 @@ section:last-of-type {
 
 .colophon-text p {
   color: var(--muted-text);
-  font-size: 1.15rem;
+  font-size: 1rem;
   margin-bottom: 1.5rem;
+}
+
+/* Two Column Homepage Layout */
+.homepage-layout {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 4rem;
+  padding: 5rem 0;
+  border-bottom: 1px solid var(--text-color);
+  align-items: start;
+}
+
+.homepage-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.sidebar-card {
+  background-color: var(--bg-color);
+  border: 1px solid rgba(52, 39, 33, 0.2);
+  padding: 2.5rem;
+}
+
+.sidebar-illustrations {
+  background-color: var(--bg-color);
+  border: 1px solid rgba(52, 39, 33, 0.2);
+}
+
+.sidebar-portrait {
+  width: 100%;
+  aspect-ratio: 4/5;
+  background-color: var(--coral);
+  border: 1px solid rgba(52, 39, 33, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: sans-serif;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1.5rem;
+  color: var(--text-color);
+}
+
+.sidebar-heading {
+  font-family: Georgia, serif;
+  font-size: 1.8rem;
+  font-style: italic;
+  font-weight: normal;
+  margin-bottom: 1rem;
+}
+
+.sidebar-text {
+  font-size: 1rem;
+  color: var(--muted-text);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.sidebar-link {
+  font-family: sans-serif;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.sidebar-link:hover {
+  color: var(--turquoise);
+}
+
+.sidebar-art-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.art-thumb {
+  aspect-ratio: 16/9;
+  border: 1px solid rgba(52, 39, 33, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: sans-serif;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.5rem;
+  text-align: center;
 }
 
 /* Footer */
@@ -530,5 +622,9 @@ footer {
   }
   nav ul {
     gap: 1.5rem;
+  }
+  .homepage-layout {
+    grid-template-columns: 1fr;
+    gap: 3rem;
   }
 }
