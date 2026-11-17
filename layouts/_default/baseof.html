@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.Locale | default "en" }}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} &mdash; {{ .Site.Title }}{{ end }}</title>
+  <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
+</head>
+<body>
+  <header>
+    <a href="{{ "/" | relURL }}" class="site-title">{{ .Site.Title }}</a>
+    <nav>
+      <ul>
+        <li><a href="{{ "/" | relURL }}">Home</a></li>
+        <li><a href="#journal">Journal</a></li>
+        <li><a href="#illustrations">Illustrations</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    {{ block "main" . }}{{ end }}
+  </main>
+
+  <footer>
+    <p>&copy; {{ now.Year }} {{ .Site.Title }}. All rights reserved.</p>
+    <p>Travel stories, personal essays, illustrations & creative projects.</p>
+  </footer>
+</body>
+</html>

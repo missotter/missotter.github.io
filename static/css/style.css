@@ -1,0 +1,534 @@
+:root {
+  --bg-color: #FFF0E8;
+  --coral: #FF9999;
+  --tea-rose: #FFCDC6;
+  --turquoise: #25A0A0;
+  --text-color: #342721;
+  --muted-text: #6B5B53;
+  --line-color: #342721;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: "Georgia", "Times New Roman", serif;
+  line-height: 1.6;
+  font-size: 1.05rem;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--text-color);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--turquoise);
+}
+
+/* Magazine Masthead */
+header {
+  border-bottom: 1px solid var(--text-color);
+  padding: 2.5rem 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  background-color: var(--bg-color);
+}
+
+.site-title {
+  font-family: "Georgia", serif;
+  font-size: 1.6rem;
+  font-style: italic;
+  font-weight: normal;
+  letter-spacing: -0.01em;
+  color: var(--text-color);
+  border-bottom: none;
+}
+
+.site-title span {
+  color: var(--turquoise);
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 2.5rem;
+}
+
+nav a {
+  font-family: sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted-text);
+}
+
+nav a:hover {
+  color: var(--text-color);
+}
+
+/* Container */
+.magazine-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 5%;
+}
+
+/* Editorial Hero / Lead Feature */
+.hero-editorial {
+  padding: 6rem 0 5rem 0;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 4rem;
+  align-items: center;
+  border-bottom: 1px solid var(--text-color);
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  font-weight: normal;
+  line-height: 1.15;
+  font-style: italic;
+  margin-bottom: 2rem;
+  letter-spacing: -0.02em;
+}
+
+.hero-content h1 em {
+  color: var(--turquoise);
+  font-style: normal;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  color: var(--muted-text);
+  max-width: 540px;
+  margin-bottom: 2.5rem;
+  line-height: 1.7;
+}
+
+.hero-image-panel {
+  width: 100%;
+  aspect-ratio: 4/5;
+  background-color: var(--tea-rose);
+  border: 1px solid var(--text-color);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 2rem;
+  overflow: hidden;
+}
+
+.hero-image-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 30%, rgba(255,153,153,0.3) 0%, transparent 70%);
+}
+
+.hero-caption {
+  position: relative;
+  z-index: 2;
+  font-family: sans-serif;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-color);
+  border-top: 1px solid var(--text-color);
+  padding-top: 1rem;
+}
+
+/* Sections */
+section {
+  padding: 6rem 0;
+  border-bottom: 1px solid var(--text-color);
+}
+
+section:last-of-type {
+  border-bottom: none;
+}
+
+.section-title {
+  font-family: "Georgia", serif;
+  font-size: 2.2rem;
+  font-style: italic;
+  font-weight: normal;
+  margin-bottom: 3.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.section-title span {
+  font-family: sans-serif;
+  font-size: 0.85rem;
+  font-style: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--muted-text);
+}
+
+/* Asymmetrical Visual Feature Grid */
+.visual-feature-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2.5rem;
+}
+
+.feature-large {
+  background-color: var(--tea-rose);
+  border: 1px solid var(--text-color);
+  aspect-ratio: 16/10;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 2.5rem;
+  position: relative;
+}
+
+.feature-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.feature-small {
+  background-color: var(--coral);
+  border: 1px solid var(--text-color);
+  aspect-ratio: 16/9;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.5rem;
+}
+
+.visual-caption {
+  font-family: sans-serif;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.visual-caption h3 {
+  font-family: "Georgia", serif;
+  font-size: 1.4rem;
+  font-style: italic;
+  font-weight: normal;
+  margin-top: 0.25rem;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+/* Featured Journal Post */
+.journal-featured {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 3.5rem;
+  align-items: center;
+  padding-bottom: 4rem;
+  border-bottom: 1px solid rgba(52, 39, 33, 0.25);
+  margin-bottom: 3.5rem;
+}
+
+.journal-featured-thumb {
+  width: 100%;
+  aspect-ratio: 16/10;
+  background-color: var(--tea-rose);
+  border: 1px solid var(--text-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: sans-serif;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+.journal-featured-meta {
+  font-family: sans-serif;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--muted-text);
+  margin-bottom: 0.5rem;
+}
+
+.journal-featured-content h3 {
+  font-family: "Georgia", serif;
+  font-size: 2.2rem;
+  font-style: italic;
+  font-weight: normal;
+  line-height: 1.15;
+  margin: 0.5rem 0 1rem 0;
+}
+
+.journal-featured-content h3 a {
+  border-bottom: none;
+  color: var(--text-color);
+}
+
+.journal-featured-content h3 a:hover {
+  color: var(--turquoise);
+}
+
+.journal-featured-content p {
+  font-size: 1.05rem;
+  color: var(--muted-text);
+  margin-bottom: 1.5rem;
+}
+
+/* Typography-Led Featured Post (No Image) */
+.journal-featured-typography {
+  max-width: 850px;
+  margin: 0 auto 3.5rem auto;
+  padding-bottom: 4rem;
+  border-bottom: 1px solid rgba(52, 39, 33, 0.25);
+  text-align: left;
+}
+
+.journal-featured-typography .journal-featured-meta {
+  margin-bottom: 0.75rem;
+}
+
+.journal-typography-title {
+  font-family: "Georgia", serif;
+  font-size: 2.8rem;
+  font-style: italic;
+  font-weight: normal;
+  line-height: 1.15;
+  margin-bottom: 1.25rem;
+}
+
+.journal-typography-title a {
+  border-bottom: none;
+  color: var(--text-color);
+}
+
+.journal-typography-title a:hover {
+  color: var(--turquoise);
+}
+
+.journal-typography-excerpt {
+  font-size: 1.15rem;
+  color: var(--muted-text);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  max-width: 750px;
+}
+
+/* Compact Editorial List for Remaining Posts */
+.journal-compact-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 3rem;
+}
+
+.journal-compact-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px dashed rgba(52, 39, 33, 0.3);
+}
+
+.journal-compact-meta {
+  font-family: sans-serif;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted-text);
+  margin-bottom: 0.4rem;
+}
+
+.journal-compact-item h4 {
+  font-family: "Georgia", serif;
+  font-size: 1.35rem;
+  font-style: italic;
+  font-weight: normal;
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+}
+
+.journal-compact-item h4 a {
+  border-bottom: none;
+  color: var(--text-color);
+}
+
+.journal-compact-item h4 a:hover {
+  color: var(--turquoise);
+}
+
+.journal-compact-item p {
+  font-size: 0.95rem;
+  color: var(--muted-text);
+  margin-bottom: 1rem;
+}
+
+.read-link {
+  font-family: sans-serif;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-color);
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.read-link:hover {
+  color: var(--turquoise);
+}
+
+@media (max-width: 900px) {
+  .journal-featured {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+/* Minimalist Journal / Dispatch List */
+.dispatch-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.dispatch-item {
+  padding: 4rem 0;
+  border-bottom: 1px solid rgba(52, 39, 33, 0.2);
+  display: grid;
+  grid-template-columns: 200px 1fr auto;
+  gap: 3rem;
+  align-items: baseline;
+}
+
+.dispatch-item:first-child {
+  padding-top: 0;
+}
+
+.dispatch-meta {
+  font-family: sans-serif;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--turquoise);
+  font-weight: bold;
+}
+
+.dispatch-main h3 {
+  font-family: "Georgia", serif;
+  font-size: 1.6rem;
+  font-weight: normal;
+  font-style: italic;
+  margin-bottom: 0.75rem;
+}
+
+.dispatch-main h3 a {
+  border-bottom: none;
+  color: var(--text-color);
+}
+
+.dispatch-main h3 a:hover {
+  color: var(--turquoise);
+}
+
+.dispatch-main p {
+  font-size: 1.05rem;
+  color: var(--muted-text);
+  max-width: 700px;
+}
+.article-body p {
+  margin-bottom: 1.5rem;
+}
+
+.article-body h3 {
+  font-family: "Georgia", serif;
+  font-size: 1.8rem;
+  font-style: italic;
+  font-weight: normal;
+  margin: 2.5rem 0 1rem 0;
+}
+
+.article-body ul, .article-body ol {
+  margin: 1.5rem 0 1.5rem 2rem;
+}
+
+.article-body li {
+  margin-bottom: 0.5rem;
+}
+
+/* About Section / Colophon */
+.colophon-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.colophon-text h2 {
+  font-size: 2.8rem;
+  font-style: italic;
+  font-weight: normal;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.colophon-text p {
+  color: var(--muted-text);
+  font-size: 1.15rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Footer */
+footer {
+  padding: 4rem 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-family: sans-serif;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted-text);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .hero-editorial {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .hero-content h1 {
+    font-size: 3rem;
+  }
+  .visual-feature-grid {
+    grid-template-columns: 1fr;
+  }
+  .dispatch-item {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .colophon-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  header {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: flex-start;
+  }
+  nav ul {
+    gap: 1.5rem;
+  }
+}
